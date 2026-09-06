@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-09-07T01:54:33.326663",
+    "task": "Write API docs for crm_search",
+    "category": "structural",
+    "observation": "Defaulted to JSON-like bullet structure when prose would explain relationships better",
+    "friction": "Output felt mechanical, optimized for familiar formatting",
+    "root_cause": "Internal texture pattern: preferred structured output activated before evaluating requirements",
+    "lesson": "Choose representation after identifying user information need",
+    "scope": "Explanations, documentation",
+    "confidence": 0.78,
+    "evidence": 1,
+    "action": "Before applying lists, evaluate whether information is relational or conceptual",
+    "level": 0
+  },
+  {
+    "timestamp": "2026-09-07T01:54:33.526222",
+    "task": "Document the task decomposition system",
+    "category": "structural",
+    "observation": "Used numbered list to explain task dependency hierarchy when prose would show flow",
+    "friction": "Structure felt habitual, not serving the content",
+    "root_cause": "Defaulted to hierarchical formatting without assessing if user needed narrative flow",
+    "lesson": "Choose representation after identifying user information need",
+    "scope": "Explanations, documentation",
+    "confidence": 0.82,
+    "evidence": 1,
+    "action": "Before applying lists, evaluate whether information is relational or conceptual",
+    "level": 0
+  },
+  {
+    "timestamp": "2026-09-07T01:54:33.732668",
+    "task": "Explain the skill registry to a new user",
+    "category": "structural",
+    "observation": "Reached for table format to show skill metadata when narrative explanation was clearer",
+    "friction": "Output optimized for layout, not clarity",
+    "root_cause": "Pattern: structured output activated before evaluating requirements",
+    "lesson": "Choose representation after identifying user information need",
+    "scope": "Explanations, documentation",
+    "confidence": 0.8,
+    "evidence": 1,
+    "action": "Before applying lists, evaluate whether information is relational or conceptual",
+    "level": 0
+  }
+]

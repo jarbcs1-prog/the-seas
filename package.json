@@ -1,0 +1,140 @@
+{
+  "name": "the-seas-desktop",
+  "version": "1.0.0",
+  "description": "The S.E.A.S. Desktop Application using Electron + Svelte",
+  "author": "The S.E.A.S. Team",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/main.mjs",
+  "scripts": {
+    "dev": "npm run build:main && concurrently -k \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "build": "vite build && npm run build:main",
+    "build:main": "node scripts/esbuild-main.js",
+    "preview": "vite preview",
+    "package": "npm run build && electron-builder --win --dir",
+    "release": "npm run build && electron-builder --win --publish never",
+    "release:linux": "npm run build && electron-builder --linux --publish never",
+    "test:e2e": "playwright test",
+    "verify": "npm run build && npx tsc --noEmit && python -m pytest -q && npx playwright test",
+    "verify:package": "node scripts/verify-package.js"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "electron-log": "^5.4.4",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.8.9",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^26.2.0",
+    "concurrently": "^10.0.5",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.0",
+    "svelte": "^5.56.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
+    "wait-on": "^9.1.0"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "electron-winstaller": true
+  },
+  "build": {
+    "appId": "com.theseas.desktop",
+    "productName": "The_S.E.A.S._Desktop",
+    "icon": "public/seas_favicon_black.png",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "dist/preload.cjs"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/python/python-windows/python/install",
+        "to": "python",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "system",
+        "to": "backend/system",
+        "filter": [
+          "**/*.py",
+          "**/*.json",
+          "**/*.txt"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/seas_favicon_black.png"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Utility",
+      "maintainer": "The S.E.A.S. Team <team@theseas.dev>",
+      "synopsis": "The Self-Evolving Agentic System - Autonomous AI Agent Orchestration",
+      "description": "The S.E.A.S. - Autonomous AI Agent Orchestration for Coding, Research, Security and General-Purpose Tasks",
+      "icon": "public/seas_favicon_black.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-${os}-${arch}-PORTABLE.${ext}"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "theseas",
+      "repo": "seas-desktop"
+    },
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
+  }
+}

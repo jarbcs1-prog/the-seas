@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-09-07T01:54:34.124516",
+    "capability": "Choose representation after identifying user information need",
+    "task": "Rewrite CRM history explanation",
+    "outcome": "User understood the data flow immediately without asking for clarification",
+    "success": true,
+    "delta": 0.05,
+    "previous_score": 0.0,
+    "new_score": 0.3
+  },
+  {
+    "timestamp": "2026-09-07T01:54:38.955352",
+    "capability": "Choose representation after identifying user information need",
+    "task": "Rewrite CRM dossier section",
+    "outcome": "User asked follow-up question about the visualization, showing deep engagement",
+    "success": true,
+    "delta": 0.05,
+    "previous_score": 0.3,
+    "new_score": 0.51
+  }
+]

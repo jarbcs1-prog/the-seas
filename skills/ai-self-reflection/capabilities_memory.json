@@ -1,0 +1,29 @@
+[
+  {
+    "lesson": "Choose representation after identifying user information need",
+    "scope": "Explanations, documentation",
+    "category": "structural",
+    "confidence": 0.9,
+    "evidence": 3,
+    "level": 2,
+    "created": "2026-09-07T01:54:33.927333",
+    "last_updated": "2026-09-07T01:54:33.927359",
+    "supporting_events": [
+      "2026-09-07T01:54:33.326663",
+      "2026-09-07T01:54:33.526222",
+      "2026-09-07T01:54:33.732668"
+    ],
+    "validation_score": 0.51,
+    "promotion_history": [
+      {
+        "level": 1,
+        "date": "2026-09-07T01:54:33.927361"
+      },
+      {
+        "level": 2,
+        "date": "2026-09-07T01:54:43.251133"
+      }
+    ],
+    "last_validated": "2026-09-07T01:54:38.955328"
+  }
+]
