@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The S.E.A.S. Desktop — Agent Orchestration, Skills Automation, CRM Intelligence</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #6b7280;
+    --accent: #0f766e;
+    --accent-ink: #ffffff;
+    --border: #e5e7eb;
+    --card: #f9fafb;
+    --code-bg: #0f172a;
+    --code-fg: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 40px 0 24px; }
+  .hero { display: flex; flex-direction: column; gap: 12px; }
+  .hero h1 { font-size: 2.2rem; line-height: 1.15; }
+  .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 70ch; }
+  .ctas { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 8px;
+    font-weight: 600; cursor: pointer; border: 1px solid var(--border);
+    background: var(--bg); color: var(--fg);
+  }
+  .btn:hover { background: var(--card); text-decoration: none; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn.primary:hover { background: #0b5f5c; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 40px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .card h3 { margin-bottom: 6px; }
+  .section { margin-top: 48px; }
+  h2 { font-size: 1.5rem; margin-bottom: 12px; }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; background: var(--code-bg); color: var(--code-fg); padding: 2px 5px; border-radius: 4px; }
+  .mock-terminal {
+    background: var(--code-bg); color: var(--code-fg); padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem; margin: 12px 0;
+  }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="container hero">
+    <h1>The S.E.A.S. Desktop</h1>
+    <p class="lead">Agent orchestration, skill-based automation, and CRM intelligence — all running on your machine. Local-first, private, and built for developers and small teams.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#install">Download</a>
+      <a class="btn" href="#demo">Run the demo</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="features" id="features">
+    <div class="card">
+      <h3>Agent Orchestration</h3>
+      Multi-agent supervision with task decomposition, a typed IPC bridge, and execution monitoring — a supervisor routes work to the right worker.
+    </div>
+    <div class="card">
+      <h3>Skills System</h3>
+      13+ built-in skills (code review, debugging, research, testing) plus a registry, loader, and CLI for custom skills you author yourself.
+    </div>
+    <div class="card">
+      <h3>CRM Intelligence Suite</h3>
+      Company/contact enrichment, deal and thread tracking, brand analysis and fact recording — 18 skills, with local and API-key gated sourcing.
+    </div>
+    <div class="card">
+      <h3>Local-First Inference</h3>
+      Streaming support for Ollama, LM Studio, KoboldCPP, and LlamaCPP. No data leaves your machine unless you add a provider.
+    </div>
+  </section>
+
+  <section class="section" id="crm">
+    <h2>CRM Integration Suite</h2>
+    <p>The CRM capability was ported from the Eve/CRM TypeScript codebase. The repo interface exposes company/contact/discussion tracking, enrichment, and fact recording. <code>system/capabilities.py</code> gates skills so only what you own stays local.</p>
+    <div class="mock-terminal">$ python -m system.api --port 8377
+# Then open the frontend. Skills live in <code>skills/crm_*</code> (18 skills)</div>
+  </section>
+
+  <section class="section" id="inference">
+    <h2>Local-First Inference</h2>
+    <p>Access local models through <code>window.api</code> with streaming and thinking traces. Choose a provider and watch the model reason live.</p>
+    <div class="mock-terminal"># Provider presets: Ollama · LM Studio · KoboldCPP · LlamaCPP
+# 14 presets with live connection testing and model sync</div>
+  </section>
+
+  <section class="section" id="install">
+    <h2>Download &amp; Install</h2>
+    <p>Three paths: Windows (NSIS or portable), Linux (AppImage / deb / rpm), Docker for containerized runs. See the README for system requirements and environment setup.</p>
+    <ul style="margin-left: 20px; list-style: none;">
+      <li><strong>Windows</strong> — <code>NSIS</code> installer or <code>portable</code> build (electron-builder)</li>
+      <li><strong>Linux</strong> — AppImage, deb, or rpm</li>
+      <li><strong>Containers</strong> — <code>docker-compose.yml</code>, Dockerfile &amp; Dockerfile.production</li>
+    </ul>
+  </section>
+
+  <section class="section" id="demo">
+    <h2>Two-minute demo</h2>
+    <p>Run a multi-agent task: a "researcher" agent and a "writer" agent coordinate through the supervisor; load a custom skill via <code>system/cli.py</code>; then record a fact into the CRM. Watch the local model stream its reasoning.</p>
+    <a class="btn" href="09_CREATIVE_ASSETS/theseas/demo-script.md">View the full demo script</a>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <dl>
+      <dt>What data leaves my machine?</dt>
+      <dd>Local models stay on device. Only the web-research skills (DuckDuckGo) and any API-key-gated skills (enrichment, LinkedIn) send data — and only when you provide the key.</dd>
+      <dt>Which models does this support?</dt>
+      <dd>Ollama, LM Studio, KoboldCPP, and LlamaCPP, with streaming and thinking traces.</dd>
+      <dt>Can I use my own CRM?</dt>
+      <dd>This is a standalone desktop app bundled with its own CRM intelligence suite. Third-party CRM connectors are not yet documented.</dd>
+      <dt>Is it open source?</dt>
+      <dd>See the repository's LICENSE file and the third-party integrations (OpenDAN, Skills_2026, AutoPentestX, Voice Processing).</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>The S.E.A.S. Desktop — local-first agent orchestration, skills automation, and CRM intelligence.</p>
+    <p>Source: <a href="https://github.com/theseas">github.com/theseas</a> · License: see <code>LICENSE</code> in the repository.</p>
+  </div>
+</footer>
+</body>
+</html>
